@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>签到</title>
+    <link rel="stylesheet" href="static/style.css?a=8">
+</head>
+<body>
+<div class="box">
+    <img src="static/images/icebang.png" alt="icebang">
+    <h1>签到信息提交</h1>
+    <h2>请填写以下表单以签到</h2>
+    <form action="/submit" method="get" name ="form" onsubmit="return doValid()">
+        <div class="input-block">
+            <img src="static/images/number.png" alt="number">
+            <input type="text" name="number" maxlength="100" placeholder="please input your ID"><br/>
+        </div>
+        <div class="input-block">
+            <img src="static/images/user.png" alt="user">
+            <input type="text" name="user" maxlength="100" placeholder="please input your name"><br/>
+        </div>
+        <div class="input-block">
+            <img src="static/images/phone.png" alt="phone">
+            <input type="text" name="phoneNum" maxlength="100" placeholder="please input your phone"><br/>
+        </div>
+        <div class="input-block">
+            <img src="static/images/class.png" alt="class">
+            <input type="text" name="class" maxlength="100" placeholder="please input your class"><br/>
+        </div>
+            <input class ="submit-block" type="submit" value="签到" id="su" class="btn self-btn bg s_btn">
+    </form>
+</div>
+</body>
+<script src="static/script.js"></script>
+</html>
