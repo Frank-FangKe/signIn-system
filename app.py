@@ -14,15 +14,16 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db = SQLAlchemy(app)
 
-class Stud(db.Model):
+class Student(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    number = db.Column(db.String(80), nullable=False)
-    user = db.Column(db.String(80), nullable=False)
+    number = db.Column(db.String(80), unique=True, nullable=False)
+    user = db.Column(db.String(80), unique=False, nullable=False)
     Banj = db.Column(db.String(120), unique=False, nullable=False)
-    phone = db.Column(db.String(80), nullable=False)
+    phone = db.Column(db.String(80), unique=True, nullable=False)
     def __repr__(self):
       return '<Stud %r>' % self.user
 
+db.create_all()
 
 @app.route('/')
 def input_info():
@@ -37,7 +38,7 @@ def success():
         Banji = request.args.get("class")
         print(Xuehao)
         print(Mingzi)
-        log = Stud(number=Xuehao, user=Mingzi, Banj=Banji, phone=Dianh)
+        log = Student(number=Xuehao, user=Mingzi, Banj=Banji, phone=Dianh)
         db.session.add(log)
         return render_template('success.html')
 

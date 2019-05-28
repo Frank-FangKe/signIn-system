@@ -29,8 +29,8 @@ function doValid() {
 
 window.onload = function () {
     if(document.cookie){
-        var today =new Date();
-        var lastSubmited =new Date(document.cookie);
+        var today = new Date();
+        var lastSubmited = new Date(document.cookie);
         if(today.getDate()===lastSubmited.getDate()){
             window.location='warning'
         }
